@@ -3,6 +3,7 @@ const router = server.Router();
 const bcrypt = require('bcryptjs');
 const Users = require('../database/db-helpers.js');
 const jwt = require('jsonwebtoken');
+const secrets = require('../tokens/config');
 
 
 router.post('/register', (req, res) => {
@@ -55,11 +56,10 @@ function generateToken(user){
         username: user.username
     };
 
-    const secret = 'kJHDJSAJSDJSKDFJDJFKDSNKLS9';
     const options ={
         expiresIn: '2h',
     };
-    return jwt.sign(payload, secret, options)
+    return jwt.sign(payload, secrets.jwtSecret, options)
 }
   
  module.exports = router; 
