@@ -60,6 +60,6 @@ function generateToken(user){
         expiresIn: '2h',
     };
     return jwt.sign(payload, secrets.jwtSecret, options)
-}
+};
   
  module.exports = router; 
