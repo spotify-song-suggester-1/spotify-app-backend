@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 
 const userRoutes = require('./users/Users_Routes');
+const authRoutes = require('./auth/Auth_routes');
+
 
 
 const server = express();
@@ -10,6 +12,8 @@ const server = express();
 //middlewares
 server.use(express.json());
 server.use('/api/users', userRoutes);
+server.use('/api/auth', authRoutes);
+
 
 //read dynamically from enviroment
 const port = process.env.PORT;
