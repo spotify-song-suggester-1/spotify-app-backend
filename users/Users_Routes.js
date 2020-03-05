@@ -53,11 +53,25 @@ router.put('/:id', (req, res) => {
         res.status(500).json({err: 'You have to pass in an usernamr or email to update'})
     }
 
-   
+
+});
 
 
+router.delete('/:id', (req, res) => {
 
-   
+    const {id} = req.params;
+
+    Users.erase(id)
+        .then(count => {
+            if(count){
+                res.json(count);
+            } else {
+                res.status(404).json({message: "provided id does not exist"})
+            }
+        })
+        .catch(err =>{
+            res.status(500).json({message: 'failed to delete account'})
+        })
 
 });
 

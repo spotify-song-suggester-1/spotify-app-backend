@@ -73,8 +73,14 @@ if you are only updating one parameter :
 
 ```
 
+## USER DELETE
+For deliting an user use<br>
+[DELETE](https://spotify-suggester-backend.herokuapp.com/api/users/2)<br>
 
-... still working on the delete  endpoint
+```https://spotify-suggester-backend.herokuapp.com/api/users/2 ```
+
+NOTE: make sure that the id being passed in belongs to an existing user
+
 
 
 

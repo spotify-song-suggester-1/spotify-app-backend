@@ -6,7 +6,8 @@ module.exports = {
     findById,
     add,
     findBy,
-    update
+    update,
+    erase
 }
 
 //resolves to an array of users
@@ -33,4 +34,9 @@ async function add(user){
 
 function update(data, id){
    return db('users').where({id}).update(data);
+}
+
+function erase(id) {
+    return db('users').where({id}).del();
+
 }
