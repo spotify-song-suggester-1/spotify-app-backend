@@ -3,46 +3,52 @@
 This is the back end for the spotify suggester app.
 It manages user's database for log in and registration as well as authentication and hashing.
 
-The API is live and up and running at :
-(GET)
-https://spotify-suggester-backend.herokuapp.com/
+The API is live and up and running at:<br>
+[GET](https://spotify-suggester-backend.herokuapp.com/)<br>
+```https://spotify-suggester-backend.herokuapp.com/```
 
 
-The following endpoint will get you an array of objects containing all users:
-(GET)
-https://spotify-suggester-backend.herokuapp.com/api/users
+## GET ALL USERS
+The following endpoint will get you an array of objects containing all users:<br>
+[GET](https://spotify-suggester-backend.herokuapp.com/api/users)<br>
 
-To get an user with a specific id just add it to the URL like so:
+```https://spotify-suggester-backend.herokuapp.com/api/users```
 
-(GET)
-https://spotify-suggester-backend.herokuapp.com/api/users/2
+## GET USER BY ID
+To get an user with a specific id just add it to the URL like so:<br>
+[GET](https://spotify-suggester-backend.herokuapp.com/api/users/2)<br>
+
+```https://spotify-suggester-backend.herokuapp.com/api/users/2```
 
 
-For users to be able to register you can hit the following endpoint:
+## USER REGISTRATION
+For users to be able to register you can hit the following endpoint:<br>
+[POST](https://spotify-suggester-backend.herokuapp.com/api/auth/register)<br>
 
-(POST)
-https://spotify-suggester-backend.herokuapp.com/api/auth/register
+```https://spotify-suggester-backend.herokuapp.com/api/auth/register```
 
 note:remeber that the shape of user table in the database is as follow:
-
+```
 {
     id:1,
     username:jessica,
     password:1234,
     email: jessica@gmail.com
 }
+```
 
+## USER LOG IN
+For log in you can use :<br>
+[POST](https://spotify-suggester-backend.herokuapp.com/api/auth/login)<br>
 
-For log in you can use :
-(POST)
-https://spotify-suggester-backend.herokuapp.com/api/auth/login 
+```https://spotify-suggester-backend.herokuapp.com/api/auth/login ```
 
 note: After loggin in the API should send back to the client a web token generated using the library jsonwebtoken
 
 
 
 
-... still working on the delete and update endpoints ok
+... still working on the delete and update endpoints
 
 
 
