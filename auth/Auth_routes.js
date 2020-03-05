@@ -10,10 +10,12 @@ router.post('/register', (req, res) => {
 
     let user = req.body;
 
-    const hash = bcrypt.hashSync(user.password,10);
-    user.password = hash;
+    if(user.username && user.password){
+        const hash = bcrypt.hashSync(user.password,10);
+        user.password = hash;
 
-    Users.add(user)
+
+        Users.add(user)
         .then(user => {
             res.status(201).json(user);
         })
@@ -21,6 +23,14 @@ router.post('/register', (req, res) => {
             res.status(500).json(error);
 
         });
+
+    } else {
+        res.status(500).json({error: "You have to pass in an username and password to register"})
+    }
+
+    
+
+  
 
 });
 

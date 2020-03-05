@@ -5,7 +5,8 @@ module.exports = {
     find,
     findById,
     add,
-    findBy
+    findBy,
+    update
 }
 
 //resolves to an array of users
@@ -28,4 +29,8 @@ async function add(user){
     const [id] = await db('users').insert(user);
     return findById(id);
 
+}
+
+function update(data, id){
+   return db('users').where({id}).update(data);
 }
