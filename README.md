@@ -46,9 +46,35 @@ For log in you can use :<br>
 note: After loggin in the API should send back to the client a web token generated using the library jsonwebtoken
 
 
+## USER UPDATE
+For update use following enpoint:<br>
+[PUT](https://spotify-suggester-backend.herokuapp.com/api/users/2)<br>
+
+```https://spotify-suggester-backend.herokuapp.com/api/users/2 ```
+
+note: you can use this endpoint to update a user's email or username. Make sure to pass in in JSON format: 
 
 
-... still working on the delete and update endpoints
+```
+{
+        "username": "new username",
+        "email": "new email"
+}
+```
+
+if you are only updating one parameter : 
+
+```
+{
+    "email": "new email"
+}
+
+
+
+```
+
+
+... still working on the delete  endpoint
 
 
 
