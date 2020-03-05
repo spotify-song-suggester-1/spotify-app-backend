@@ -42,7 +42,7 @@ note: After loggin in the API should send back to the client a web token generat
 
 
 
-... still working on the delete and update endpoints
+... still working on the delete and update endpoints ok
 
 
 
